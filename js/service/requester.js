@@ -7,12 +7,12 @@ faqSystemApp.factory('requester', function requester($http) {
         console.log(rootURL + path);
         $http({
                 method: method,
-                headers: {
-                    "Authorization": auth + token
-                },
+                //headers: {
+                //    "Authorization": auth + token
+                //},
                 data: JSON.stringify(data),
-                content: content,
-                params: params,
+                //content: content,
+                //params: params,
                 url: rootURL + path
             }
         )
@@ -46,7 +46,7 @@ faqSystemApp.factory('requester', function requester($http) {
     }
 
     function getQuestions(query, success, error){
-        request("GET", "api/questions/all", null, success, error, "", query)
+        request("GET", "api/Questions", null, success, error, "", query)
     }
 
     return {
