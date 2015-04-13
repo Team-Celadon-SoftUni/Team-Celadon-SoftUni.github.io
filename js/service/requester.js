@@ -1,4 +1,4 @@
-daisyApp.factory('requester', function requester($http) {
+faqSystemApp.factory('requester', function requester($http) {
     var content = 'application/json';
     var rootURL = 'http://faqsystem.apphb.com/';
     var auth = 'Bearer ';

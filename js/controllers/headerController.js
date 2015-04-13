@@ -1,7 +1,7 @@
 var barOut = true;
 var barLogged = false;
 var barAdmin = false;
-daisyApp.controller("HeaderController", function ($scope, $rootScope, $location, Func, requester) {
+faqSystemApp.controller("HeaderController", function ($scope, $rootScope, $location, Func, requester) {
 
     $scope.barOut = barOut;
     $scope.barLogged = barLogged;

@@ -1,4 +1,4 @@
-daisyApp.factory('Func', function($location) {
+faqSystemApp.factory('Func', function($location) {
 
     function redirect(path){
         $location.path('/'+path+'');

@@ -1,4 +1,4 @@
-daisyApp.controller("UserController", function ($scope, $rootScope, $location, Func, requester) {
+faqSystemApp.controller("UserController", function ($scope, $rootScope, $modal, Func, requester) {
 
     $scope.login = function (user) {
         requester.login(
@@ -17,4 +17,17 @@ daisyApp.controller("UserController", function ($scope, $rootScope, $location, F
             }
         );
     }
+
+    $scope.modalSeeAnswers = function (selectedUser) {
+        var modalInstance = $modal.open({
+            templateUrl: 'partials/modalSeeAnswers.html',
+            controller: 'modalSeeAnswers',
+            size: 'lg',
+            resolve: {
+                ad: function () {
+                    return selectedUser;
+                }
+            }
+        });
+    };
 });

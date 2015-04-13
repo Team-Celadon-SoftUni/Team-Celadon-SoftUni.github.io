@@ -1,4 +1,4 @@
-daisyApp.config(function ($locationProvider, $routeProvider) {
+faqSystemApp.config(function ($locationProvider, $routeProvider) {
     $routeProvider
         .when('/home',
         {
@@ -11,10 +11,6 @@ daisyApp.config(function ($locationProvider, $routeProvider) {
         .when('/register',
         {
             templateUrl: 'partials/register.html'
-        })
-        .when('/aboutUs',
-        {
-            templateUrl: 'partials/aboutUs.html'
         })
         .otherwise(
         {
