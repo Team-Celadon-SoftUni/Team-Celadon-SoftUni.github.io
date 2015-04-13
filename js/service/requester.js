@@ -1,11 +1,15 @@
 daisyApp.factory('requester', function requester($http) {
     var content = 'application/json';
     var rootURL = 'http://faqsystem.apphb.com/';
+    var auth = 'Bearer ';
 
-    function request(method, path, data, success, error, params) {
+    function request(method, path, data, success, error, token, params) {
         console.log(rootURL + path);
         $http({
                 method: method,
+                headers: {
+                    "Authorization": auth + token
+                },
                 data: JSON.stringify(data),
                 content: content,
                 params: params,
@@ -27,7 +31,9 @@ daisyApp.factory('requester', function requester($http) {
     }
 
     function login(data, success, error) {
-        request("GET", "login", null, success, error, data);
+        data['grant_type'] = 'password';
+        console.log(data);
+        request("POST", "Token", data, success, error);
     }
 
     function addPoster(data, success, error) {
