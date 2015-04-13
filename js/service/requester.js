@@ -5,6 +5,8 @@ faqSystemApp.factory('requester', function requester($http) {
 
     function request(method, path, data, success, error, token, params) {
         console.log(rootURL + path);
+        console.log(data);
+
         $http({
                 method: method,
                 //headers: {
@@ -26,13 +28,11 @@ faqSystemApp.factory('requester', function requester($http) {
     }
 
     function register(data, success, error) {
-        console.log(data);
         request("POST", "api/Account/Register", data, success, error);
     }
 
     function login(data, success, error) {
         data['grant_type'] = 'password';
-        console.log(data);
         request("POST", "Token", data, success, error);
     }
 
