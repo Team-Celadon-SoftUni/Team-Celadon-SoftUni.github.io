@@ -39,6 +39,10 @@ daisyApp.factory('requester', function requester($http) {
         request("GET", "classes/Poster", null, success, error, query);
     }
 
+    function getQuestions(){
+
+    }
+
     return {
         register: register,
         login: login,
