@@ -1,4 +1,4 @@
-daisyApp.controller('PosterCtrl', function ($scope, $rootScope, Func, requester) {
+faqSystemApp.controller('PosterCtrl', function ($scope, $rootScope, Func, requester) {
     var type = $rootScope.type;
     var whereReq = type ? {where:{"category": type}}  : {};
     $rootScope.isLoad = false;

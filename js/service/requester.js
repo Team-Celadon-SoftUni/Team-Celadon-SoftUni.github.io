@@ -1,4 +1,4 @@
-daisyApp.factory('requester', function requester($http) {
+faqSystemApp.factory('requester', function requester($http) {
     var content = 'application/json';
     var rootURL = 'http://faqsystem.apphb.com/';
     var auth = 'Bearer ';
@@ -45,15 +45,15 @@ daisyApp.factory('requester', function requester($http) {
         request("GET", "classes/Poster", null, success, error, query);
     }
 
-    function getQuestions(){
-
+    function getQuestions(query, success, error){
+        request("GET", "api/questions/all", null, success, error, "", query)
     }
 
     return {
         register: register,
         login: login,
-
         addPoster: addPoster,
-        getPosters: getPosters
+        getPosters: getPosters,
+        getQuestions: getQuestions
     }
 });

@@ -1,4 +1,4 @@
-daisyApp.config(function ($locationProvider, $routeProvider) {
+faqSystemApp.config(function ($locationProvider, $routeProvider) {
     $routeProvider
         .when('/home',
         {

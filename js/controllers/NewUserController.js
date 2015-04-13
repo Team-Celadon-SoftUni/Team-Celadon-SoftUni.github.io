@@ -1,4 +1,4 @@
-daisyApp.controller('NewUserController', function ($scope, $rootScope, Func, requester) {
+faqSystemApp.controller('NewUserController', function ($scope, $rootScope, Func, requester) {
 
     $scope.newUser = {
         ConfirmPassword: "Aa#12345",

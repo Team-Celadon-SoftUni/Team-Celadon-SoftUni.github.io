@@ -1,17 +1,7 @@
 <div class="row">
     <div class="col-md-6" style="width: 100%">
-        <div>
-            <carousel interval="interval">
-                <slide ng-repeat="slide in slides" active="slide.active">
-                    <img ng-src="{{slide.image}}" style="margin:auto; width: 100%; height: 350px">
-
-                    <div class="carousel-caption">
-                        <h2>{{ slide.name }}</h2>
-
-                        <p>{{ slide.description }}</p>
-                    </div>
-                </slide>
-            </carousel>
+        <div ng-controller="ListQuestionsController" ng-init="getAllQuestions()">
+            <p ng-repeat="question in questions"> {{ question.Title }} </p>
         </div>
     </div>
 </div>

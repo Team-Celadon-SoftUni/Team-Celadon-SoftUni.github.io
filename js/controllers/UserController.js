@@ -1,4 +1,4 @@
-daisyApp.controller("UserController", function ($scope, $rootScope, $location, Func, requester) {
+faqSystemApp.controller("UserController", function ($scope, $rootScope, $location, Func, requester) {
 
     $scope.login = function (user) {
         requester.login(
