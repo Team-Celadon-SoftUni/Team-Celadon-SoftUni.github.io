@@ -1,7 +1,23 @@
 <div class="row">
     <div class="col-md-6" style="width: 100%">
         <div ng-controller="ListQuestionsController" ng-init="getAllQuestions()">
-            <p ng-repeat="question in questions"> {{ question.Title }} </p>
+            <div class="col-md-2"></div>
+            <div class="questions-wrapper col-md-8">
+                <div ng-repeat="question in questions" class="btn btn-block btn-success" id="question-{{ question.Id }}" ng-click="loadAnswers(question.Id)">
+                    <div class="panel-heading text-center">
+                        <h4>
+                            {{ question.Title }}
+                            <span class="pull-right date-container">{{ question.DateOfOpen | date : "dd MMM yyyy (HH:mm:ss)" }}</span>
+                        </h4>
+                        <div class="answers-container hidden">
+                            <div ng-repeat="answer in answers" class="panel panel-danger">
+                                <div class="panel-heading">{{ answer.Text }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
 </div>

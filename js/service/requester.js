@@ -5,7 +5,7 @@ faqSystemApp.factory('requester', function requester($http) {
 
     function request(method, path, data, success, error, token, params) {
         console.log(rootURL + path);
-        console.log(data);
+        //console.log(data);
 
         $http({
                 method: method,
@@ -49,11 +49,16 @@ faqSystemApp.factory('requester', function requester($http) {
         request("GET", "api/Questions", null, success, error, "", query)
     }
 
+    function getQuestionAnswers(id, success, error){
+        request("GET", "api/answer/question?questionid=" + id, null, success, error, "", null)
+    }
+
     return {
         register: register,
         login: login,
         addPoster: addPoster,
         getPosters: getPosters,
-        getQuestions: getQuestions
+        getQuestions: getQuestions,
+        getQuestionAnswers: getQuestionAnswers
     }
 });
