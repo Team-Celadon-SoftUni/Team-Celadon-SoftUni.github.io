@@ -6,7 +6,7 @@ faqSystemApp.controller("HeaderController", function ($scope, $rootScope, $locat
     $scope.barOut = barOut;
     $scope.barLogged = barLogged;
     $scope.barAdmin = barAdmin;
-    $scope.username = $rootScope.username;
+    //$scope.username = $rootScope.username;
 
     $scope.redirect = function (path) {
         Func.redirect(path);
