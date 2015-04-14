@@ -1,7 +1,7 @@
 faqSystemApp.factory('requester', function requester($http) {
     var content = 'application/json';
     var contentRaw = 'application/raw';
-    var rootURL = 'https://appharbor.com/';
+    var rootURL = 'http://faqsystem.apphb.com/';
     var auth = 'Bearer ';
 
     function request(method, path, data, success, error, token, params) {
