@@ -13,7 +13,7 @@ faqSystemApp.controller("UserController", function ($scope, $rootScope, $modal, 
                 Func.redirect('home');
             },
             function (error) {
-                Func.alert('danger', 'Get Posters failed. Please try again later.' + error.message);
+                Func.alert('danger', 'Get Posters failed. Please try again later.' );
             }
         );
     }

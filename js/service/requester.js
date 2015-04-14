@@ -1,6 +1,7 @@
 faqSystemApp.factory('requester', function requester($http) {
     var content = 'application/json';
-    var rootURL = 'http://faqsystem.apphb.com/';
+    var contentRaw = 'application/raw';
+    var rootURL = 'http://localhost:32227/';
     var auth = 'Bearer ';
 
     function request(method, path, data, success, error, token, params) {
@@ -9,9 +10,7 @@ faqSystemApp.factory('requester', function requester($http) {
 
         $http({
                 method: method,
-                //headers: {
-                //    "Authorization": auth + token
-                //},
+
                 data: JSON.stringify(data),
                 //content: content,
                 //params: params,
@@ -33,7 +32,27 @@ faqSystemApp.factory('requester', function requester($http) {
 
     function login(data, success, error) {
         data['grant_type'] = 'password';
-        request("POST", "Token", data, success, error);
+        data = 'Username=' + data['Username'] + '&Password=' + data['Password'] + '&grant_type=password';
+        console.log(data);
+
+        $http({
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                data: data,
+                url: rootURL + "Token"
+            }
+        )
+            .success(function (data, status, headers, config) {
+                success(data, status, headers(), config);
+            })
+            .error(function (data, status, headers, config) {
+                error(data, status, headers(), config);
+            }
+        );
+
+        //request("POST", "Token", data, success, error);
     }
 
     function addPoster(data, success, error) {
@@ -45,7 +64,7 @@ faqSystemApp.factory('requester', function requester($http) {
         request("GET", "classes/Poster", null, success, error, query);
     }
 
-    function getQuestions(query, success, error){
+    function getQuestions(query, success, error) {
         request("GET", "api/Questions", null, success, error, "", query)
     }
 
