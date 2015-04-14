@@ -32,7 +32,7 @@ local.properties
 ## PHPStorm
 #################
 
-.idea
+*.idea
 
 #################
 ## Visual Studio
