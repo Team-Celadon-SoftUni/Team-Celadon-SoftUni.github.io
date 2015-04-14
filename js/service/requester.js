@@ -1,7 +1,7 @@
 faqSystemApp.factory('requester', function requester($http) {
     var content = 'application/json';
     var contentRaw = 'application/raw';
-    var rootURL = 'http://localhost:32227/';
+    var rootURL = 'https://appharbor.com/';
     var auth = 'Bearer ';
 
     function request(method, path, data, success, error, token, params) {
