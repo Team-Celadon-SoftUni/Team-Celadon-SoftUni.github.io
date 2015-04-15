@@ -1,14 +1,9 @@
-faqSystemApp.run(function ($cookieStore) {
+faqSystemApp.run(function ($cookieStore, $rootScope) {
     if ($cookieStore.get('access_token')) {
         barOut = false;
         barLogged = true;
         barAdmin = false;
-
-        if($cookieStore.get('isAdmin')){
-            barOut = false;
-            barLogged = false;
-            barAdmin = true;
-        }
+        $rootScope.username = $cookieStore.get('userName');
     }
     else {
         barOut = true;

@@ -10,7 +10,7 @@ faqSystemApp.controller("UserController", function ($scope, $rootScope, $modal, 
 
                 $cookieStore.put('access_token', data['access_token']);
                 $cookieStore.put('userName', data.userName);
-                $scope.username = $cookieStore.get('userName');
+                $rootScope.username = $cookieStore.get('userName');
                 Func.alert('success', 'Get Posters Success. Can see it in HOME tab.');
                 Func.redirect('home');
             },
