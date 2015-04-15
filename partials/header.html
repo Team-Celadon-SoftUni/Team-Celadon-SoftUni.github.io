@@ -36,7 +36,6 @@
                     <li class="dropdown">
                         <a href class="dropdown-toggle" data-toggle="dropdown">{{username}} <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href data-ng-model="editProfile" data-ng-click="redirect('editProfile')">Edit Profile</a></li>
                             <li><a href data-ng-click="logout()">Logout</a></li>
                         </ul>
                     </li>
@@ -46,10 +45,10 @@
         <div id="adminNav" data-ng-model="adminNav" data-ng-show="barAdmin">
             <div id="loginNavAdmin" class="navbar-collapse navbar-responsive-collapse collapse out">
                 <ul class="nav navbar-nav">
-                    <li><a href data-ng-click="goTo('userPosters')">My Posters</a></li>
-                    <li><a href data-ng-click="goTo('allPosters')">Posters</a></li>
-                    <li><a href data-ng-click="goTo('users')">Users</a></li>
-                    <li><a href data-ng-click="goTo('categories-towns')">Categories/Towns</a></li>
+                    <li><a href data-ng-click="redirect('userPosters')">My Posters</a></li>
+                    <li><a href data-ng-click="redirect('allPosters')">Posters</a></li>
+                    <li><a href data-ng-click="redirect('users')">Users</a></li>
+                    <li><a href data-ng-click="redirect('categories-towns')">Categories/Towns</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right col-md-2">
                     <li class="dropdown">
