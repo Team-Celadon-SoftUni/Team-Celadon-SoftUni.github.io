@@ -102,6 +102,36 @@ body > footer > div > div {
     height: 200px;
 }
 
+.questions-wrapper a{
+    text-decoration: none;
+    color: #234465;
+    font-weight: bold;
+}
+
 .date-container{
-    font-size: 0.7em;
+    font-size: 0.8em;
+    display: block;
+    color: #333333;
+}
+
+.date-container>span{
+    margin: 0 4px 0 10px;
+    width: 16px;
+    height: 14px;
+    display: inline-block;
+    background: url('../img/softUni_Icons.png') 42px 0;
+}
+
+.question-block{
+    margin: 0 auto;
+    width: 95%;
+    background: #EEEEEE;
+}
+
+.answers-container{
+    display: none;
+}
+
+.answers-container>h3{
+    color: #234465;
 }

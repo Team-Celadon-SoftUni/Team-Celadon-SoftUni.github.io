@@ -12,7 +12,7 @@ faqSystemApp.controller("ListQuestionsController",
             function(error){
                 console.log(error);
             })
-        }
+        };
 
         $scope.loadAnswers = function(id){
             requester.getQuestionAnswers(
@@ -20,7 +20,10 @@ faqSystemApp.controller("ListQuestionsController",
                 function(data){
                     console.log(data);
                     $scope.answers = data;
-                    $('#question-' + id + ' .answers-container').toggleClass('hidden');
+
+
+                    $('.answers-container').css("display", "none");
+                    $('#question-' + id + ' .answers-container').css("display", "block");
                 },
                 function(error){
                     console.log(error);

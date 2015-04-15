@@ -2,16 +2,39 @@
     <div class="col-md-6" style="width: 100%">
         <div ng-controller="ListQuestionsController" ng-init="getAllQuestions()">
             <div class="col-md-2"></div>
-            <div class="questions-wrapper col-md-8">
-                <div ng-repeat="question in questions" class="btn btn-block btn-success" id="question-{{ question.Id }}" ng-click="loadAnswers(question.Id)">
-                    <div class="panel-heading text-center">
-                        <h4>
-                            {{ question.Title }}
-                            <span class="pull-right date-container">{{ question.DateOfOpen | date : "dd MMM yyyy (HH:mm:ss)" }}</span>
-                        </h4>
-                        <div class="answers-container hidden">
-                            <div ng-repeat="answer in answers" class="panel panel-danger">
-                                <div class="panel-heading">{{ answer.Text }}</div>
+            <div class="questions-wrapper col-md-8 jumbotron">
+                <div ng-repeat="question in questions" class="btn btn-block btn-default question-block" id="question-{{ question.Id }}" ng-click="loadAnswers(question.Id)">
+                    <div class="panel-heading text-left" id="accordion">
+                        <h3>
+                            <a href="">{{ question.Title }}</a>
+                        </h3>
+                        <hr/>
+                        <p class="post-details">
+                            <span class="date-container">
+                                <span></span>
+                                {{ question.DateOfOpen | date : "dd/MM/yyyy" }}
+                            </span>
+                            <span class="user-container" ng-init="getUser(question.UserId)">
+                                <span></span>
+                                {{ user.Username }}
+                            </span>
+                        </p>
+                        <div class="answers-container">
+                            <h3>Answers:</h3>
+                            <div ng-repeat="answer in answers" ng-click="loadAnswers(question.Id)">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <p>{{ answer.Text }}</p>
+                                        <hr/>
+                                        <p class="post-details">
+                                        <span class="date-container">
+                                            <span></span>
+                                            {{ answer.DateOfAnswered | date : "dd/MM/yyyy" }}
+                                        </span>
+                                        </p>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>

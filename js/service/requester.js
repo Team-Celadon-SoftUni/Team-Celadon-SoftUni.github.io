@@ -72,12 +72,18 @@ faqSystemApp.factory('requester', function requester($http) {
         request("GET", "api/answer/question?questionid=" + id, null, success, error, "", null)
     }
 
+    function getUserById(id, success, error){
+        console.log("called");
+        request("GET", "api/user/" + id, null, success, error, "", null)
+    }
+
     return {
         register: register,
         login: login,
         addPoster: addPoster,
         getPosters: getPosters,
         getQuestions: getQuestions,
-        getQuestionAnswers: getQuestionAnswers
+        getQuestionAnswers: getQuestionAnswers,
+        getUserById: getUserById
     }
 });
