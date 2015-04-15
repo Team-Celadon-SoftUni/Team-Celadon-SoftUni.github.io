@@ -16,6 +16,10 @@ faqSystemApp.config(function ($locationProvider, $routeProvider) {
         {
             templateUrl: 'partials/help.html'
         })
+        .when('/feedback',
+        {
+            templateUrl: 'partials/feedback.html'
+        })
         .otherwise(
         {
             redirectTo:'/home'
