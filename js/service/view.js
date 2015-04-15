@@ -12,6 +12,10 @@ faqSystemApp.config(function ($locationProvider, $routeProvider) {
         {
             templateUrl: 'partials/register.html'
         })
+        .when('/help',
+        {
+            templateUrl: 'partials/help.html'
+        })
         .otherwise(
         {
             redirectTo:'/home'
