@@ -1,3 +1,24 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
 li {
     list-style: none;
 }
@@ -109,8 +130,8 @@ body > footer > div > div {
 }
 
 .date-container{
-    font-size: 0.8em;
-    display: block;
+    font-size: 0.6em;
+    display: inline-block;
     color: #333333;
 }
 
@@ -120,6 +141,20 @@ body > footer > div > div {
     height: 14px;
     display: inline-block;
     background: url('../img/softUni_Icons.png') 42px 0;
+}
+
+.user-container{
+    font-size: 0.6em;
+    display: inline-block;
+    color: #333333;
+}
+
+.user-container .icon-span{
+    margin: 0 4px 0 10px;
+    width: 16px;
+    height: 14px;
+    display: inline-block;
+    background: url('../img/softUni_Icons.png') 64px 0;
 }
 
 .question-block{

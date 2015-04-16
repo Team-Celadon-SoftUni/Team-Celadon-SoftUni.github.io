@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-6" style="width: 100%">
-        <div ng-controller="QuestionsController" ng-init="getAllQuestions()">
+        <div ng-controller="QuestionsController" ng-init="getMyQuestions()">
             <div class="col-md-2"></div>
             <div class="questions-wrapper col-md-8 jumbotron">
                 <div ng-repeat="question in questions" class="btn btn-block btn-default question-block" id="question-{{ question.Id }}" ng-click="loadAnswers(question.Id)">
@@ -18,6 +18,7 @@
                                 <span class="icon-span"></span>
                                 <span class="user-span"></span>
                             </span>
+                            <button class="btn btn-danger pull-right" ng-click="deleteQuestion(question.Id)">Delete</button>
                         </p>
                         <div class="answers-container">
                             <h3>Answers:</h3>

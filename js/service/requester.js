@@ -12,6 +12,9 @@ faqSystemApp.factory('requester', function requester($http) {
                 method: method,
 
                 data: JSON.stringify(data),
+                headers:{
+                    "Authorization": "Bearer " + token
+                },
                 //content: content,
                 //params: params,
                 url: rootURL + path
@@ -68,13 +71,24 @@ faqSystemApp.factory('requester', function requester($http) {
         request("GET", "api/Questions", null, success, error, "", query)
     }
 
+    function getUsersQuestions(success, error, token){
+        request("GET", "api/user/Question", null, success, error, token, null)
+    }
+
+    function deleteQuestion(id, success, error, token){
+        request("DELETE", "api/user/question?id=" + id, null, success, error, token, null)
+    }
+
     function getQuestionAnswers(id, success, error){
         request("GET", "api/answer/question?questionid=" + id, null, success, error, "", null)
     }
 
-    function getUserById(id, success, error){
-        console.log("called");
-        request("GET", "api/user/" + id, null, success, error, "", null)
+    function getUserById(id, success, error, token){
+        request("GET", "api/user/" + id, null, success, error, token, null)
+    }
+
+    function postNewQuestion(title, success, error, token){
+        request("POST", "api/user/question", title, success, error, token, null)
     }
 
     return {
@@ -84,6 +98,9 @@ faqSystemApp.factory('requester', function requester($http) {
         getPosters: getPosters,
         getQuestions: getQuestions,
         getQuestionAnswers: getQuestionAnswers,
-        getUserById: getUserById
+        getUserById: getUserById,
+        postNewQuestion: postNewQuestion,
+        getUsersQuestions: getUsersQuestions,
+        deleteQuestion: deleteQuestion
     }
 });
