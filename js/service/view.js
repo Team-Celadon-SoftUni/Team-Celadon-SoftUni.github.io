@@ -4,13 +4,17 @@ faqSystemApp.config(function ($locationProvider, $routeProvider) {
         {
             templateUrl: 'partials/home.html'
         })
-        .when('/posters',
-        {
-            templateUrl: 'partials/posters.html'
-        })
         .when('/register',
         {
             templateUrl: 'partials/register.html'
+        })
+        .when('/askquestion',
+        {
+            templateUrl: 'partials/askquestion.html'
+        })
+        .when('/myquestions',
+        {
+            templateUrl: 'partials/myquestions.html'
         })
         .when('/help',
         {
