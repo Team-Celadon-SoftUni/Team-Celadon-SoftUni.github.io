@@ -1,18 +1,18 @@
-<div class="row" ng-controller="AskQuestionController">
+<div class="row" ng-controller="PostAnswerController">
     <div class="col-md-2"></div>
     <form class="form-horizontal authentication-form jumbotron col-md-8" ng-submit="postNewAnswer(answerInfo)">
         <fieldset>
             <div class="form-group">
-                <label for="title" class="col-lg-2 control-label">Question Title:</label>
+                <label for="title" class="col-lg-2 control-label">Answer Text:</label>
                 <div class="col-lg-8">
-                    <textarea rows="4" class="form-control" id="title" placeholder="Title" ng-model="answerInfo.Text">
+                    <textarea rows="4" class="form-control" id="title" placeholder="Text" ng-model="answerInfo.Text">
                     </textarea>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                     <a href="#/" class="btn btn-lg btn-default">Cancel</a>
-                    <button type="submit" class="btn btn-lg btn-success">Post</button>
+                    <button type="submit" class="btn btn-lg btn-success">Add</button>
                 </div>
             </div>
         </fieldset>

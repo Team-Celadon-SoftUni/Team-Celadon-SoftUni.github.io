@@ -4,8 +4,8 @@
             <div class="col-md-2"></div>
             <div class="questions-wrapper col-md-8 jumbotron">
                 <div ng-repeat="question in questions" class="btn btn-block btn-default question-block" id="question-{{ question.Id }}" ng-click="loadAnswers(question.Id)">
-                    <div class="panel-heading text-left" id="accordion">
-                        <h4>
+                    <div class="text-left panel panel-default status-panel">
+                        <h4 class="panel-heading">
                             <a href="">{{ question.Title | statusFilter:question.QuestionState:question.Id:question.Title }}</a>
                         </h4>
                         <hr/>

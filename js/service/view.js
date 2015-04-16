@@ -16,6 +16,10 @@ faqSystemApp.config(function ($locationProvider, $routeProvider) {
         {
             templateUrl: 'partials/myquestions.html'
         })
+        .when('/addanswer',
+        {
+            templateUrl: 'partials/addanswer.html'
+        })
         .when('/help',
         {
             templateUrl: 'partials/help.html'

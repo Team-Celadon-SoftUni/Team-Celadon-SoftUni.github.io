@@ -91,6 +91,10 @@ faqSystemApp.factory('requester', function requester($http) {
         request("POST", "api/user/question", title, success, error, token, null)
     }
 
+    function postNewAnswer(questionId, text, success, error, token){
+        request("POST", "api/user/answer?questionid=" + questionId, text, success, error, token, null)
+    }
+
     return {
         register: register,
         login: login,
@@ -101,6 +105,7 @@ faqSystemApp.factory('requester', function requester($http) {
         getUserById: getUserById,
         postNewQuestion: postNewQuestion,
         getUsersQuestions: getUsersQuestions,
-        deleteQuestion: deleteQuestion
+        deleteQuestion: deleteQuestion,
+        postNewQuestion: postNewAnswer
     }
 });

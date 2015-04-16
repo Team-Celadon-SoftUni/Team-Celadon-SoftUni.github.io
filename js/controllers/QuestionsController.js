@@ -69,4 +69,8 @@ faqSystemApp.controller("QuestionsController",
                 $cookieStore.get("access_token"))
         }
 
+        $scope.setQuestionId = function(id){
+            $rootScope.questionId = id;
+        }
+
 });
